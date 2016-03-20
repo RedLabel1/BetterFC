@@ -1,0 +1,56 @@
+#subTd, #verSubTd , #doSubTd, #doSubTd_{
+	background-color:#f1f1f1;
+}
+#doSubA, #doSubA_, #verSubA {
+	text-decoration: none;
+}
+#doSubSpan {
+	font-size: 14px;
+	color: #266016;
+	font-weight: 700;
+	cursor: pointer;
+}
+#doSubSpan_ {
+	font-size: 12px;
+	color: #266016;
+	font-weight: 400;
+}
+#doSubSpan2_ {
+	position: relative;
+	text-align: left;
+	font-size: 12px;
+	color: #602010;
+	font-weight: 700;
+	cursor: pointer;
+}
+#verSubSpan {
+	font-size: 14px;
+	font-weight: 700;
+}
+#spSelecciona {
+	color: #206010;
+	font-weight: 700;
+}
+#hideFieldset {
+	visibility: hidden;
+}
+#tbTrash {
+	height: 60px;
+}
+#lblTrash {
+	position: relative;
+	top: -15px;
+	opacity: 0.5;
+	font-weight: 700;
+	text-align: left;
+}
+#tdSubsFooter {
+	height: 16px;
+}
+select[name="what"] {
+	visibility: hidden;
+	position: fixed;
+}
+body {
+	visibility: hidden;
+}
