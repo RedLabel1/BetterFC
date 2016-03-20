@@ -1,0 +1,87 @@
+body {
+	background-color: #FAFAFA;
+}
+#main {
+	height: 206px;
+	width: 192px;	
+}
+#mainBg {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+#areaGeneral {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+#logo {
+	position: absolute;
+	height: 38px;
+	width: 192px;
+}
+#separator {
+	position: absolute;
+	top: 50px;
+	height: 12px;
+	width: 192px;
+}
+#horzLine1 {
+	position: absolute;
+	top: 5px;
+	width: 100%;
+	height: 1px;
+}
+#area1 {
+	position: absolute;
+	top: 62px;
+	height: 58px;
+	width: 192px;
+}
+#txt1, #txt2 {
+	position: absolute;
+	height: 32px;
+	width: 192px;
+}
+#infotexto1, #infotexto2 {
+	position: absolute;
+    margin-top: 0em;
+	align: justify;
+}
+#sliderNotifAnchorage, #sliderThreadAnchorage {
+	position: absolute;
+	top: 40px;
+	height: 1px;
+	width: 192px;
+	border: 1px solid #aaaaaa/*{borderColorContent}*/;
+	background: #ffffff/*{bgColorContent}*/ url(images/ui-bg_flat_75_ffffff_40x100.png)/*{bgImgUrlContent}*/ 50%/*{bgContentXPos}*/ 50%/*{bgContentYPos}*/ repeat-x/*{bgContentRepeat}*/;
+    border-radius: 1px;
+	padding-right: -2cm;
+}
+#sliderNotif, #sliderThread {
+	position: absolute;
+	top: 0px;
+	cursor: default;
+	height: 0.1em;
+	width: 13.5em;
+}
+#area2 {
+	position: absolute;
+	top: 120px;
+	height: 58px;
+	width: 192px;
+}
+#area3 {
+	position: absolute;
+	top: 178px;
+	height: 58px;
+	width: 192px;
+}
+#donate {
+	position: absolute;
+	left: 144px;
+	top: 20px;
+	width: 50px;
+	Height: 14px;
+	outline: none;
+}

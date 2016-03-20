@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="resources/css/popup.css" type="text/css" rel="stylesheet" />
+		<link href="resources/css/jqueryui.css" type="text/css" rel="stylesheet" />
+		<script src="lib/jquery-2.2.0.min.js"></script>
+		<script src="lib/jquery-ui.min.js"></script>
+		<script	src="resources/js/popup.js"></script>
+		<script	src="resources/js/betterfc.js"></script>
+	</head>
+	<body>
+		<div id="main">
+			<img id="mainBg" class="img " src="resources/images/transparent.gif" />
+			
+			<div id="logo">
+				<img id="area1Bg" class="img " src="resources/images/fc38.png" />
+				<img id="area1Bg" class="img " src="resources/images/better.png" />
+			</div>
+			
+			<div id="separator">
+				<img id="horzLine1" class="img " src="resources/images/horizontal_line.png" />
+			</div>
+			
+			<div id="area1">
+				<div id="txt1">
+					<p id="infotexto1"> Intervalo de actualizaci&oacute;n de notificaciones (en segundos).</p>
+				</div>
+				<div id="sliderNotifAnchorage">
+					<div id="sliderNotif"></div>
+				</div>
+			</div>
+			
+			<div id="area2">
+				<div id="txt2">
+					<p id="infotexto2"> Intervalo de actualizaci&oacute;n de hilos (en segundos).</p>
+				</div>
+				<div id="sliderThreadAnchorage">
+					<div id="sliderThread"></div>
+				</div>
+			</div>
+			
+			<div id="area3">
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="J6LHGVNKA6732">
+					<input id="donate" type="image" src="resources/images/donate.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+				</form>
+			</div>
+			
+		</div>
+	</body>
+</html>
