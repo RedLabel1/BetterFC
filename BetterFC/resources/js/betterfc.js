@@ -2,7 +2,7 @@
 var sv, fv = {};
 var d = new Date();
 
-if(setVerSubVars()!=null && !sessionStorage.getItem("isCookieSet")) {
+if(setVerSubVars() && !sessionStorage.getItem("isCookieSet")) {
 	u = $("a").filter(function() {return this.href.match(/member.php/)})[0].text;
 	resetCookies(u);
 }
@@ -10,7 +10,7 @@ if(setVerSubVars()!=null && !sessionStorage.getItem("isCookieSet")) {
 if((window.location.href.indexOf("https://www.forocoches.com/foro/")!=-1 || window.location.href.indexOf("http://www.forocoches.com/foro/")!=-1)
 	&& (window.location.href.indexOf("https://www.forocoches.com/foro/subscription.php")==-1 && window.location.href.indexOf("http://www.forocoches.com/foro/subscription.php")==-1)) {
 	
-	if(setVerSubVars()!=null) {
+	if(setVerSubVars()) {
 		$($("table[class='tborder']").find($("td[class='alt2'][width='60px']"))[1]).after(fv.verSubTd[0]);
 	}
 }
@@ -32,7 +32,7 @@ if(window.location.href.indexOf("https://www.forocoches.com/foro/subscription.ph
 	|| window.location.href.indexOf("https://www.forocoches.com/foro/showthread.php?t=")!=-1
 	|| window.location.href.indexOf("http://www.forocoches.com/foro/showthread.php?t=")!=-1) {
 	
-	if(setShowthreadVars()!=null) {
+	if(setShowthreadVars()) {
 		if(readCookie("bfcSub"+sv.u)!="" && readCookie("bfcSub"+sv.u).indexOf(sv.t)!=-1) {
 			$("#verSubTd").after(sv.doSubTd_[0]);
 		} else {
@@ -209,8 +209,9 @@ function setVerSubVars() {
 		fv.verSubTd[0].appendChild(fv.verSubA[0]);
 		fv.verSubA[0].appendChild(fv.verSubDiv[0]);
 		fv.verSubDiv[0].appendChild(fv.verSubSpan[0]);
+		return true;
 	} catch(e) {
-		return null;
+		return false;
 	}
 }
 
@@ -236,8 +237,9 @@ function setShowthreadVars() {
 		sv.doSubTd[0].appendChild(sv.doSubA[0]);
 		sv.doSubA[0].appendChild(sv.doSubDiv[0]);
 		sv.doSubDiv[0].appendChild(sv.doSubSpan[0]);
+		return true;
 	} catch(e) {
-		return null;
+		return false;
 	}
 }
 
