@@ -2,7 +2,7 @@
 var sv, fv = {};
 var d = new Date();
 
-if(setVerSubVars() && !sessionStorage.getItem("isCookieSet")) {
+if((window.location.href.indexOf("https://www.forocoches.com")!=-1 || window.location.href.indexOf("http://www.forocoches.com")!=-1) && (setVerSubVars() && !sessionStorage.getItem("isCookieSet"))) {
 	u = $("a").filter(function() {return this.href.match(/member.php/)})[0].text;
 	resetCookies(u);
 }
@@ -47,7 +47,7 @@ if(window.location.href.indexOf("https://www.forocoches.com/foro/subscription.ph
 			unsubscribe(sv);
 		});
 	}
-	highlightOp();
+	highlightOp(sv);
 } else if(window.location.href.indexOf("https://www.forocoches.com/foro/subscription.php")!=-1
 	|| window.location.href.indexOf("http://www.forocoches.com/foro/subscription.php")!=-1) {
 
@@ -161,23 +161,25 @@ $(function(){
 	});
 });
 
-function highlightOp() {
+function highlightOp(sv) {
 	var op = "";
-	$.ajax({
-		url: window.location.href,
-		datatype : "json",
-		contentType: "application/json; charset=utf-8",
-		success: function(response){
-			op = $(response).find("a[class='bigusername']")[0].text;
-			$("a[class='bigusername']").each(function(i) {
-				if(this.text == op) {
-					$(this).parent().parent().next().css("background-color", "#FFE9D4");
-					$(this).parent().parent().parent().next().children().first().css("background-color", "#FFE9D4");
-					$(this).parent().parent().parent().next().next().children().first().next().css("background-color", "#FFE9D4");
-				}
-			});
-		}
-	});
+	if(setShowthreadVars()) {
+		$.ajax({
+			url: "https://www.forocoches.com/foro/showthread.php?t="+sv.t,
+			datatype : "json",
+			contentType: "application/json; charset=utf-8",
+			success: function(response){
+				op = $(response).find("a[class='bigusername']")[0].search;
+				$("a[class='bigusername']").each(function(i) {
+					if(this.search == op) {
+						$(this).parent().parent().next().css("background-color", "#FFE9D4");
+						$(this).parent().parent().parent().next().children().first().css("background-color", "#FFE9D4");
+						$(this).parent().parent().parent().next().next().children().first().next().css("background-color", "#FFE9D4");
+					}
+				});
+			}
+		});
+	}
 }
 
 function resetCookies(u) {
@@ -257,7 +259,7 @@ function subscribe(sv) {
 			success: function(response) {
 				d = new Date();
 				createCookie("bfcSub"+sv.u, readCookie("bfcSub"+sv.u)+","+sv.t, d);
-				$(sv.doSubTd[0]).remove();
+				$("#doSubTd").remove();
 				$("#verSubTd").after(sv.doSubTd_[0]);
 				$(g.data).remove();
 				$($("#doSubSpan2_")[0]).click(function() {
@@ -291,7 +293,7 @@ function unsubscribe(sv) {
 			data: $("form[action='subscription.php?do=dostuff&folderid=0']").serialize(),
 			success: function(response) {
 				createCookie("bfcSub"+sv.u, readCookie("bfcSub"+sv.u).split(","+sv.t).join(""), d);
-				$(sv.doSubTd_[0]).remove();
+				$("#doSubTd_").remove();
 				$("#verSubTd").after(sv.doSubTd[0]);
 				$(g.data).remove();
 				$($("#doSubSpan")[0]).click(function() {
