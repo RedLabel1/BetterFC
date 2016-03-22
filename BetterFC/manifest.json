@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Better ForoCoches",
-	"version": "1.0.2",
+	"version": "1.0.5",
 	
 	"icons": {
 		"16": "resources/images/fc16.png",
